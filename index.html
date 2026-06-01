@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WhatsApp Sales Assistant Starter</title>
+  <meta name="description" content="Generate a ready-to-demo WhatsApp sales assistant flow for Nigerian small businesses in minutes." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span> WA Sales Assistant</div>
+      <a class="ghost" href="./sales-kit.md">Sales kit</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">MVP for selling today</p>
+        <h1>Turn any small business into a reply-instantly WhatsApp demo.</h1>
+        <p class="lead">Fill one form. Get intake questions, auto-reply scripts, objection handlers, order flow, and a demo message you can paste to the client.</p>
+        <div class="actions">
+          <a class="button" href="#builder">Build demo</a>
+          <button class="button secondary" id="loadSample">Load sample food vendor</button>
+        </div>
+      </div>
+      <aside class="phone" aria-label="WhatsApp demo preview">
+        <div class="phone-top">Business WhatsApp</div>
+        <div class="chat">
+          <div class="bubble in">Hi, how much is delivery?</div>
+          <div class="bubble out">Hey 👋 Delivery depends on your area. What’s your location and what would you like to order?</div>
+          <div class="bubble in">Wuse 2. Jollof rice.</div>
+          <div class="bubble out">Perfect. Please send quantity, preferred delivery time, and your name. I’ll confirm total now.</div>
+        </div>
+      </aside>
+    </section>
+  </header>
+
+  <main>
+    <section class="strip">
+      <div><strong>Sell the pain:</strong> late replies lose buyers.</div>
+      <div><strong>Show the demo:</strong> client sees their own business name.</div>
+      <div><strong>Close fast:</strong> ₦15k starter / ₦35k order-flow / ₦60k urgent.</div>
+    </section>
+
+    <section id="builder" class="builder">
+      <div class="panel form-panel">
+        <p class="eyebrow">Client intake</p>
+        <h2>Build the demo</h2>
+        <label>Business name <input id="businessName" placeholder="e.g. Tasty Bowl Abuja" /></label>
+        <label>Business type <input id="businessType" placeholder="e.g. food vendor, salon, tutor" /></label>
+        <label>What they sell <textarea id="offers" placeholder="Jollof rice - ₦2,500\nChicken pack - ₦4,000"></textarea></label>
+        <label>FAQs <textarea id="faqs" placeholder="Do you deliver? Yes, Abuja only.\nCan I pay on delivery? No, transfer before dispatch."></textarea></label>
+        <label>Order details to collect <input id="orderFields" placeholder="name, location, order, quantity, delivery time" /></label>
+        <label>Owner handoff contact <input id="handoff" placeholder="Call/WhatsApp 080..." /></label>
+        <div class="actions sticky-actions">
+          <button class="button" id="generate">Generate flow</button>
+          <button class="button secondary" id="copyAll">Copy all</button>
+        </div>
+      </div>
+
+      <div class="panel output-panel">
+        <p class="eyebrow">Paste-ready output</p>
+        <h2>Client demo script</h2>
+        <pre id="output">Fill the form and hit Generate flow.</pre>
+      </div>
+    </section>
+
+    <section class="cards">
+      <article>
+        <h3>1. Free demo DM</h3>
+        <p>Offer a demo using their actual business name. No abstract AI sermon. Show the thing.</p>
+      </article>
+      <article>
+        <h3>2. Manual first, automate later</h3>
+        <p>Version 1 can be scripted replies + WhatsApp Business quick replies. Sell value before engineering cathedral.</p>
+      </article>
+      <article>
+        <h3>3. Upgrade path</h3>
+        <p>After payment, connect real automation: FAQ brain, order capture, Google Sheet/CRM, and owner handoff.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Built for same-day hustling. Legal cashout. Minimal nonsense.
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
