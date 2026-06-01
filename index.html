@@ -3,88 +3,353 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WhatsApp Sales Assistant Starter</title>
-  <meta name="description" content="Generate a ready-to-demo WhatsApp sales assistant flow for Nigerian small businesses in minutes." />
+  <title>WhatsApp Sales Assistant Demo | Build + Sell</title>
+  <meta name="description" content="A merged WhatsApp Sales Assistant demo with live chatbot flows, client-specific script builder, intake questions, pricing, and copyable sales scripts." />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <div class="brand"><span class="dot"></span> WA Sales Assistant</div>
-      <a class="ghost" href="./sales-kit.md">Sales kit</a>
-    </nav>
-    <section class="hero-grid">
-      <div>
-        <p class="eyebrow">MVP for selling today</p>
-        <h1>Turn any small business into a reply-instantly WhatsApp demo.</h1>
-        <p class="lead">Fill one form. Get intake questions, auto-reply scripts, objection handlers, order flow, and a demo message you can paste to the client.</p>
-        <div class="actions">
-          <a class="button" href="#builder">Build demo</a>
-          <button class="button secondary" id="loadSample">Load sample food vendor</button>
-        </div>
+  <!-- Status Ticker -->
+  <div class="ticker" aria-label="Sales assistant status ticker">
+    <div class="ticker-track">
+      <div class="ticker-content">
+        <span>ACTIVE DEMOS: 03</span>
+        <span>•</span>
+        <span>AVG REPLY: 42s</span>
+        <span>•</span>
+        <span>STARTER: ₦15K</span>
+        <span>•</span>
+        <span>UPGRADE: ₦35K+</span>
+        <span>•</span>
+        <span>NO API KEYS REQUIRED</span>
       </div>
-      <aside class="phone" aria-label="WhatsApp demo preview">
-        <div class="phone-top">Business WhatsApp</div>
-        <div class="chat">
-          <div class="bubble in">Hi, how much is delivery?</div>
-          <div class="bubble out">Hey 👋 Delivery depends on your area. What’s your location and what would you like to order?</div>
-          <div class="bubble in">Wuse 2. Jollof rice.</div>
-          <div class="bubble out">Perfect. Please send quantity, preferred delivery time, and your name. I’ll confirm total now.</div>
+      <div class="ticker-content" aria-hidden="true">
+        <span>ACTIVE DEMOS: 03</span>
+        <span>•</span>
+        <span>AVG REPLY: 42s</span>
+        <span>•</span>
+        <span>STARTER: ₦15K</span>
+        <span>•</span>
+        <span>UPGRADE: ₦35K+</span>
+        <span>•</span>
+        <span>NO API KEYS REQUIRED</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="hero" id="top">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="WhatsApp Sales Assistant home">
+        <span class="brand-mark">WA</span>
+        <span>Sales Assistant</span>
+      </a>
+      <div class="nav-links">
+        <a href="#demo">Demo</a>
+        <a href="#builder">Builder</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#scripts">Scripts</a>
+      </div>
+    </nav>
+
+    <section class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">For Nigerian small businesses selling in DMs</p>
+        <h1>Turn slow WhatsApp chats into paid orders.</h1>
+        <p class="hero-text">Show prospects a live sales assistant, then generate a client-specific WhatsApp Business quick-reply pack in minutes.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#builder">
+            <span>Build a custom demo</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a class="button ghost" href="#demo">
+            <span>Try live flows</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </a>
+        </div>
+        <ul class="trust-list" aria-label="Key benefits">
+          <li>Answers FAQs before customers disappear</li>
+          <li>Collects clean order details for the owner</li>
+          <li>Manual-first setup today, automation upgrade later</li>
+        </ul>
+      </div>
+
+      <!-- Live Mobile Phone Preview -->
+      <aside class="phone-card" aria-label="WhatsApp assistant preview">
+        <div class="phone-header">
+          <span class="avatar">AI</span>
+          <div>
+            <strong>Sales Assistant</strong>
+            <small>online now</small>
+          </div>
+        </div>
+        <div class="mini-chat">
+          <p class="bubble bot">Hi 👋 Welcome to Tasty Trays. What would you like to order today?</p>
+          <p class="bubble user">Do you have small chops trays?</p>
+          <p class="bubble bot">Yes. Small tray is ₦8,000 and serves 4-6 people. Should I reserve one for today?</p>
         </div>
       </aside>
     </section>
   </header>
 
   <main>
-    <section class="strip">
-      <div><strong>Sell the pain:</strong> late replies lose buyers.</div>
-      <div><strong>Show the demo:</strong> client sees their own business name.</div>
-      <div><strong>Close fast:</strong> ₦15k starter / ₦35k order-flow / ₦60k urgent.</div>
+    <!-- Three Step Process Bento Strip -->
+    <section class="strip" aria-label="Sales process">
+      <div>
+        <strong>1. Sell the pain</strong>
+        <span>Late replies lose buyers silently. Instant response secures their interest.</span>
+      </div>
+      <div>
+        <strong>2. Show proof</strong>
+        <span>Live interactive flows make the conversion power completely obvious.</span>
+      </div>
+      <div>
+        <strong>3. Close fast</strong>
+        <span>₦15k starter pack, ₦35k order-flow setup, ₦60k premium fast-track.</span>
+      </div>
     </section>
 
-    <section id="builder" class="builder">
-      <div class="panel form-panel">
-        <p class="eyebrow">Client intake</p>
-        <h2>Build the demo</h2>
-        <label>Business name <input id="businessName" placeholder="e.g. Tasty Bowl Abuja" /></label>
-        <label>Business type <input id="businessType" placeholder="e.g. food vendor, salon, tutor" /></label>
-        <label>What they sell <textarea id="offers" placeholder="Jollof rice - ₦2,500\nChicken pack - ₦4,000"></textarea></label>
-        <label>FAQs <textarea id="faqs" placeholder="Do you deliver? Yes, Abuja only.\nCan I pay on delivery? No, transfer before dispatch."></textarea></label>
-        <label>Order details to collect <input id="orderFields" placeholder="name, location, order, quantity, delivery time" /></label>
-        <label>Owner handoff contact <input id="handoff" placeholder="Call/WhatsApp 080..." /></label>
-        <div class="actions sticky-actions">
-          <button class="button" id="generate">Generate flow</button>
-          <button class="button secondary" id="copyAll">Copy all</button>
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+      <div class="section-heading text-center">
+        <p class="eyebrow">Transparent Value</p>
+        <h2>WhatsApp Sales Assistant Setup</h2>
+        <p>A completely customized quick-reply set and interactive flow designed specifically to turn your business's chat traffic into cash flow.</p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Tier 1: Starter -->
+        <div class="pricing-card">
+          <div class="price-badge">Starter setup</div>
+          <div class="price-header">
+            <span class="price-num">₦15,000</span>
+            <p class="price-desc">Perfect for businesses looking to automate greeting and core FAQs instantly.</p>
+          </div>
+          <ul class="checklist">
+            <li>Welcome & greeting quick reply</li>
+            <li>FAQ response templates</li>
+            <li>Product/service menu list</li>
+            <li>Standard owner handoff script</li>
+            <li>Setup documentation</li>
+          </ul>
+          <a class="button ghost w-full" href="#builder">Generate Flow</a>
+        </div>
+
+        <!-- Tier 2: Professional (Featured) -->
+        <div class="pricing-card featured">
+          <div class="price-badge primary">Professional setup</div>
+          <div class="price-header">
+            <span class="price-num">₦35,000</span>
+            <p class="price-desc">Includes advanced detail capture and interactive qualification flows.</p>
+          </div>
+          <ul class="checklist">
+            <li><strong>Everything in Starter</strong></li>
+            <li>Custom order details collection</li>
+            <li>Automatic lead qualifying questions</li>
+            <li>Objection handling responses</li>
+            <li>WhatsApp Business quick-reply catalog</li>
+          </ul>
+          <a class="button primary w-full" href="#builder">Build Custom Demo</a>
+        </div>
+
+        <!-- Tier 3: Agency Premium -->
+        <div class="pricing-card">
+          <div class="price-badge">Agency Urgent</div>
+          <div class="price-header">
+            <span class="price-num">₦60,000</span>
+            <p class="price-desc">Same-day urgent setup with catalog copywriting and full priority support.</p>
+          </div>
+          <ul class="checklist">
+            <li><strong>Everything in Professional</strong></li>
+            <li>Same-day rapid deployment</li>
+            <li>Complete product list rewrite/cleanup</li>
+            <li>Custom brand voice & slang tuning</li>
+            <li>30 days active support and edits</li>
+          </ul>
+          <a class="button ghost w-full" href="#builder">Fast Track Setup</a>
         </div>
       </div>
+    </section>
 
-      <div class="panel output-panel">
-        <p class="eyebrow">Paste-ready output</p>
-        <h2>Client demo script</h2>
-        <pre id="output">Fill the form and hit Generate flow.</pre>
+    <!-- Chat Flow Interactive Demo Section -->
+    <section class="section alt" id="demo">
+      <div class="section-heading">
+        <p class="eyebrow">Interactive demo</p>
+        <h2>Try 3 chatbot sales flows</h2>
+        <p>Pick a business type, then tap customer messages to see how the assistant replies in real-time.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Business demo flows">
+        <button class="tab active" type="button" data-flow="food" role="tab" aria-selected="true">
+          <span>🍲 Food vendor</span>
+        </button>
+        <button class="tab" type="button" data-flow="fashion" role="tab" aria-selected="false">
+          <span>👗 Thrift/Fashion</span>
+        </button>
+        <button class="tab" type="button" data-flow="beauty" role="tab" aria-selected="false">
+          <span>💅 Beauty/Service</span>
+        </button>
+      </div>
+      <div class="demo-grid">
+        <div class="chat-panel">
+          <div class="chat-title">
+            <span class="avatar">WA</span>
+            <div>
+              <strong id="flowTitle">Food Vendor Assistant</strong>
+              <small>demo conversation</small>
+            </div>
+          </div>
+          <div class="chat-window" id="chatWindow" aria-live="polite"></div>
+          <div class="quick-replies" id="quickReplies" aria-label="Quick demo messages"></div>
+        </div>
+        <aside class="flow-notes">
+          <h3>What this proves</h3>
+          <ul id="flowBenefits"></ul>
+        </aside>
       </div>
     </section>
 
-    <section class="cards">
-      <article>
-        <h3>1. Free demo DM</h3>
-        <p>Offer a demo using their actual business name. No abstract AI sermon. Show the thing.</p>
-      </article>
-      <article>
-        <h3>2. Manual first, automate later</h3>
-        <p>Version 1 can be scripted replies + WhatsApp Business quick replies. Sell value before engineering cathedral.</p>
-      </article>
-      <article>
-        <h3>3. Upgrade path</h3>
-        <p>After payment, connect real automation: FAQ brain, order capture, Google Sheet/CRM, and owner handoff.</p>
-      </article>
+    <!-- Client-specific Builder Section -->
+    <section class="section builder" id="builder">
+      <div class="panel form-panel">
+        <p class="eyebrow">Client-specific builder</p>
+        <h2>Generate the paste-ready flow</h2>
+        
+        <label for="businessName">Business name
+          <input id="businessName" placeholder="e.g. Tasty Bowl Abuja" />
+        </label>
+        
+        <label for="businessType">Business type
+          <input id="businessType" placeholder="e.g. food vendor, salon, tutor" />
+        </label>
+        
+        <label for="offers">What they sell <span class="hotkey">ALT+M</span>
+          <textarea id="offers" placeholder="Jollof rice - ₦2,500&#10;Chicken pack - ₦4,000"></textarea>
+        </label>
+        
+        <label for="faqs">FAQs <span class="hotkey">ALT+F</span>
+          <textarea id="faqs" placeholder="Do you deliver? Yes, Abuja only.&#10;Can I pay on delivery? No, transfer before dispatch."></textarea>
+        </label>
+        
+        <label for="orderFields">Order details to collect
+          <input id="orderFields" placeholder="name, location, order, quantity, delivery time" />
+        </label>
+        
+        <label for="handoff">Owner handoff contact
+          <input id="handoff" placeholder="Call/WhatsApp 080..." />
+        </label>
+        
+        <div class="hero-actions sticky-actions">
+          <button class="button primary" id="generate" type="button">
+            <span>Generate flow</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </button>
+          <button class="button ghost" id="loadSample" type="button">Load sample</button>
+          <button class="button ghost" id="copyAll" type="button">
+            <span>Copy all</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        </div>
+      </div>
+      
+      <div class="panel output-panel">
+        <p class="eyebrow">Client demo script</p>
+        <h2>Output preview</h2>
+        <div class="editor-mockup">
+          <div class="editor-header">
+            <div class="editor-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="editor-tabs">
+              <button class="editor-tab active" type="button" data-tab="all" id="tab-all"><span>full_script.txt</span></button>
+              <button class="editor-tab" type="button" data-tab="pitch" id="tab-pitch"><span>client_pitch.txt</span></button>
+              <button class="editor-tab" type="button" data-tab="replies" id="tab-replies"><span>quick_replies.txt</span></button>
+            </div>
+          </div>
+          <div class="editor-body">
+            <div class="editor-linenumbers" aria-hidden="true">
+              <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+            </div>
+            <pre id="output">Fill the form and hit Generate flow.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Onboarding Section -->
+    <section class="section" id="intake">
+      <div class="section-heading">
+        <p class="eyebrow">Client onboarding</p>
+        <h2>Intake questions</h2>
+        <p>Use these precise questions to collect everything needed from the business owner before building their assistant.</p>
+      </div>
+      <div class="intake-grid">
+        <article>
+          <h3>Business basics</h3>
+          <ol>
+            <li>Business name and WhatsApp number?</li>
+            <li>What do you sell or provide?</li>
+            <li>What areas do you deliver to or serve?</li>
+            <li>Opening and response hours?</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Sales details</h3>
+          <ol>
+            <li>Top products/services and prices?</li>
+            <li>Customer details required before confirming?</li>
+            <li>Payment methods accepted?</li>
+            <li>Delivery, pickup, or booking rules?</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Brand voice</h3>
+          <ol>
+            <li>Formal, friendly, playful, or luxury?</li>
+            <li>Common customer questions?</li>
+            <li>When should a human take over?</li>
+            <li>Discounts, guarantees, or policies?</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- Copy and Send Scripts Section -->
+    <section class="section alt" id="scripts">
+      <div class="section-heading">
+        <p class="eyebrow">Copy and send</p>
+        <h2>Pitch scripts</h2>
+        <p>Tap copy on any platform script, customize the bracketed texts, and pitch to prospective clients instantly.</p>
+      </div>
+      <div class="scripts-grid">
+        <article class="script-card">
+          <div class="script-head">
+            <h3>WhatsApp DM</h3>
+            <button class="copy-btn" type="button" data-copy="whatsappScript">Copy</button>
+          </div>
+          <p id="whatsappScript">Hi [Name], I help small businesses set up a WhatsApp Sales Assistant that replies to customers, answers FAQs, collects orders, and guides them to payment. Setup is ₦15,000 one-time. Want me to show you a quick demo for [business type]?</p>
+        </article>
+        <article class="script-card">
+          <div class="script-head">
+            <h3>Instagram DM</h3>
+            <button class="copy-btn" type="button" data-copy="instagramScript">Copy</button>
+          </div>
+          <p id="instagramScript">Hey [Name] 👋 I noticed you get customer questions in your comments/DMs. I can create a WhatsApp Sales Assistant so buyers can ask prices, place orders, and get delivery/payment info instantly. One-time setup: ₦15k. Should I send a sample flow?</p>
+        </article>
+        <article class="script-card">
+          <div class="script-head">
+            <h3>Facebook post</h3>
+            <button class="copy-btn" type="button" data-copy="facebookScript">Copy</button>
+          </div>
+          <p id="facebookScript">Business owners: stop losing customers because replies are slow. Get a WhatsApp Sales Assistant that welcomes customers, shares your menu/services, collects order details, and tells them the next step. Setup is only ₦15,000. Comment “ASSISTANT” or send a DM to see a demo.</p>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    Built for same-day hustling. Legal cashout. Minimal nonsense.
+  <footer class="footer">
+    <p>Static demo. Built for Nigerian agency owners. No tracking, no backend, no API keys. Manual first, automate after payment.</p>
   </footer>
-
-  <script src="./script.js"></script>
+  
+  <script src="./app.js"></script>
 </body>
 </html>

@@ -1,37 +1,41 @@
-# WhatsApp Sales Assistant Starter
+# WhatsApp Sales Assistant Demo
 
-Same-day MVP for selling WhatsApp assistant setup to small businesses.
+Merged static demo combining the best parts of:
 
-This is intentionally simple:
-- no backend
-- no API keys
-- no fake AI claims
-- one form that generates a client-specific demo script
-- paste-ready WhatsApp Business quick replies
+- `whatsapp-sales-assistant-demo`: landing page, pricing, interactive demo flows, intake questions, pitch scripts, smoke test
+- `WhatsApp-Sales-Assistant-Starter`: client-specific flow generator, sample business, copy-ready WhatsApp quick replies, upgrade/pricing path
 
-## How to use
+## What is included
 
-Open `index.html` in a browser.
+- Mobile-first landing page for the ₦15k setup offer
+- 3 interactive chatbot demo flows: food, fashion, beauty/service
+- Client-specific WhatsApp assistant script builder
+- Intake questions for onboarding business owners
+- Copyable WhatsApp, Instagram, and Facebook pitch scripts
+- No backend, API keys, tracking, or build step
 
-1. Fill in the business name, offer list, FAQs, and order details.
-2. Click `Generate flow`.
-3. Copy the output.
-4. Send the demo to the business owner.
-5. If they like it, set up WhatsApp Business quick replies manually first.
+## Run locally
 
-## Pricing suggestion
+```bash
+python -m http.server 4173
+```
+
+Open:
+
+```text
+http://127.0.0.1:4173/
+```
+
+## Smoke test
+
+```bash
+python smoke_test.py
+```
+
+## Sales positioning
 
 - Starter: ₦15k — FAQ + quick replies + basic setup
 - Standard: ₦35k — order collection + lead qualification + owner handoff
 - Urgent/Premium: ₦60k+ — same-day full setup + custom tone + product cleanup
 
-## Upgrade path
-
-After the manual MVP sells, automate with:
-- WhatsApp Business API provider
-- FAQ knowledge base
-- Google Sheet / Airtable order logging
-- human handoff rules
-- payment confirmation workflow
-
-Do not overbuild before someone pays. That is how devs convert hustle into architecture prison.
+Manual first. Automate after someone pays.
